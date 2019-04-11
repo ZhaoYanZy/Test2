@@ -10,7 +10,6 @@ import java.lang.ref.WeakReference;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private MyHandler myHandler;
 
     private TextView tvHello;
@@ -19,8 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //查找View
         tvHello = findViewById(R.id.tv_hello);
+        //初始化Handler
         myHandler = new MyHandler(this);
+        //发送延时更新
         myHandler.sendEmptyMessageDelayed(1, 3000);
     }
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //清楚消息
         myHandler.removeMessages(1);
     }
 }
