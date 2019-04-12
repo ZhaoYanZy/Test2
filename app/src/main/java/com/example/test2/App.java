@@ -13,20 +13,10 @@ import android.content.Context;
  */
 public class App extends Application {
 
-    private static App app;
-
     @Override
     public void onCreate() {
         super.onCreate();
-
+        // match case
     }
-
-    public static App getApp() {
-        if (app == null) {
-            app = new App();
-        }
-        return app;
-    }
-
 
 }
