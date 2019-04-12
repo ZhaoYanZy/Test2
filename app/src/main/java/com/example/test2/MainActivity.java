@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         Log.d(TAG, "handleMessage: 收到延迟消息!");
                         mainActivity.tvHello.setText("你好世界!");
+                        //增加测试崩溃
+                        SpUtils spUtils = new SpUtils();
                         break;
                 }
             }
