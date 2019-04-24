@@ -15,7 +15,7 @@ public class SpUtils {
     }
 
     public static void saveUserName() {
-        App.getApp().getApplicationContext();
+
     }
 
 }

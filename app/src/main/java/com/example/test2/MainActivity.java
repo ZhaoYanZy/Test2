@@ -27,10 +27,17 @@ public class MainActivity extends AppCompatActivity {
         //初始化Handler
         myHandler = new MyHandler(this);
         Log.d(TAG, "onCreate: 发送延迟消息");
-        //发送延时更新
+        //发送延时更新//@see #onDestroy()
+        //#onDestroy() {@link #onDestroy()}
         myHandler.sendEmptyMessageDelayed(1, 3000);
     }
 
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.d(TAG, "onBackPressed: 退出程序");
+    }
 
     private static class MyHandler extends Handler {
 
@@ -51,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "handleMessage: 收到延迟消息!");
                         mainActivity.tvHello.setText("你好世界!");
                         //增加测试崩溃
-                        SpUtils spUtils = new SpUtils();
+//                        SpUtils spUtils = new SpUtils();
                         break;
                 }
             }
